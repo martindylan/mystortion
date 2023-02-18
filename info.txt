@@ -1,0 +1,3 @@
+mystortion~ es un efecto de distorsión independiente de amplitud basado en AM, la frecuencia de la señal moduladora puede determinarse arbitrariamente (modo "fixed") o a través de un algoritmo de detección de altura (modo "detect", los resultados son más impredecibles en sonidos polifónicos o muy ruidosos)
+
+autor: dylan martin

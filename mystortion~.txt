@@ -1,0 +1,20 @@
+param -name shape -list triangle/saw/square/noise -default 0;
+param -name mod -label % -min 0 -max 100 -default 0 -nsteps 101;
+param -name sharpness -label % -min 1 -max 100 -default 100 -nsteps 100;
+param -name pitch mode -list detect/fixed -default 0;
+param -name pitch multiply -min 0 -max 15000 -default 1;
+param -name pitch frequency -label Hz -min 0 -max 15000 -default 440;
+param -name phase shift -label % -min 0 -max 100 -default 0 -nsteps 101;
+param -name limit mode -list clip/fold -default 0;
+param -name drive -label % -min 0 -max 100 -default 100 -nsteps 101;
+param -name drywet -label % -min 0 -max 100 -default 100 -nsteps 101;
+param -name gain -label dB -min -100 -max 100 -default 0;
+param -name switch -list off/on -default 1;
+
+type effect;
+code dMad;
+compatibility 1.0.7;
+playhead true;
+bus 2 2;
+description info.txt;
+manufacturer Dylan Martin;
