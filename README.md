@@ -1,5 +1,5 @@
 # mystortion~
-Efecto de audio de distorsión basada en AM, desarrollado en [Pure Data](https://github.com/pure-data/pure-data) + [Camomile](https://github.com/pierreguillot/Camomile).  
+Efecto distorsión basada en AM, desarrollado en [Pure Data](https://github.com/pure-data/pure-data) + [Camomile](https://github.com/pierreguillot/Camomile).  
 Se puede utilizar como plugin VST3 o como abstracción dentro de Pure Data.
 
 ## instalación del plugin
@@ -8,4 +8,3 @@ Descargar de la última [release](https://github.com/martindylan/mystortion/rele
 ## créditos
 - [Pure Data](https://github.com/pure-data/pure-data) por Miller Puckette y muchxs más.
 - [Camomile](https://github.com/pierreguillot/Camomile) por Pierre Guillot.
-# mystortion
