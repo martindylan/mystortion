@@ -1,4 +1,4 @@
-#N canvas 685 52 679 692 12;
+#N canvas 913 52 451 692 12;
 #X obj 12 273 r \$0-pitch-mode;
 #X obj 12 298 sel 0 1, f 14;
 #X msg 12 348 detect;
@@ -1105,4 +1105,4 @@ drive -2 -8 0 10 -1 -262144 -1 0 1;
 #X connect 80 0 24 0;
 #X connect 80 0 26 0;
 #X connect 80 0 72 3;
-#X coords 0 -1 1 1 153 166 2 10 70;
+#X coords 0 -1 1 1 153 162 2 10 72;
