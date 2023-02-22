@@ -796,24 +796,6 @@ float state, f 67;
 #X obj 436 147 line~;
 #X obj 316 351 *~, f 4;
 #X obj 418 351 *~;
-#X obj 11 73 cnv 15 151 160 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 37 89 hradio 10 1 0 4 \$0-shape-s \$0-shape-r noise 0 -8 0 10
--1 -262144 -1 0;
-#X obj 88 89 hradio 10 1 0 2 \$0-pitch-mode-s \$0-pitch-mode-r fixed
-24 4 0 10 -1 -262144 -1 0;
-#X obj 19 149 hsl 56 10 1 100 1 0 \$0-sharpness-s \$0-sharpness-r sharpness
--2 -8 0 10 -1 -262144 -1 5500 1;
-#X obj 88 76 cnv 10 10 10 empty empty pitch_mode 0 5 0 10 -262144 -1
-0;
-#X obj 82 79 cnv 2 1 80 empty \$0-bar empty 20 12 0 14 -1 -1 0;
-#X obj 88 117 nbx 5 15 0 15000 0 0 \$0-pitch-freq-s \$0-pitch-freq-r
-freq 0 -8 0 10 -1 -262144 -1 440 256;
-#X obj 147 118 cnv 14 14 15 empty \$0-pitch-label Hz 0 8 0 10 -262144
--1 0;
-#X obj 88 29 r \$0-pitch-update;
-#X obj 91 149 hsl 64 10 0 100 0 0 \$0-phase-s \$0-phase-r phase_shift
--2 -8 0 10 -1 -262144 -1 0 1;
 #N canvas 912 82 346 453 camomile 0;
 #X msg 251 157 gui redraw;
 #X obj 251 182 s camomile;
@@ -853,21 +835,10 @@ freq 0 -8 0 10 -1 -262144 -1 440 256;
 #X connect 7 0 2 0;
 #X connect 30 0 2 0;
 #X restore 1136 568 pd camomile;
-#X obj 16 164 cnv 2 141 1 empty \$0-bar empty 20 12 0 14 -1 -1 0;
-#X obj 19 119 hsl 56 10 0 100 0 0 \$0-mod-s \$0-mod-r modulation -2
--8 0 10 -1 -262144 -1 0 1;
-#X obj 19 217 hsl 56 10 0 100 0 0 \$0-drywet-s \$0-drywet-r drywet
--2 -8 0 10 -1 -262144 -1 5500 1;
 #X obj 354 37 == 0;
 #X obj 354 12 r \$0-switch;
-#X obj 147 217 tgl 10 0 \$0-switch-s \$0-switch-r empty 15 4 0 10 -1
--262144 -1 1 1;
 #X obj 316 313 *~, f 4;
 #X obj 418 313 *~, f 5;
-#X obj 88 215 nbx 3 15 -100 100 0 0 \$0-gain-s \$0-gain-r gain 0 -8
-0 10 -1 -262144 -1 0 256;
-#X obj 128 220 cnv 13 10 6 empty \$0-text dB 1 2 0 10 -262144 -1 0
-;
 #X obj 450 198 + 100;
 #X obj 450 223 dbtorms;
 #X obj 450 173 r \$0-gain;
@@ -959,18 +930,11 @@ freq 0 -8 0 10 -1 -262144 -1 440 256;
 #X connect 35 0 13 0;
 #X restore 316 227 pd limit;
 #X f 10;
-#X obj 16 182 hradio 10 1 0 3 \$0-limit-mode-s \$0-limit-mode-r fold
-34 4 0 10 -1 -262144 -1 0;
-#X obj 16 169 cnv 10 10 10 empty empty limit_mode 0 5 0 10 -262144
--1 0;
 #X msg 12 627 label \$1;
 #X obj 12 577 list prepend symbol;
 #X obj 12 602 list trim;
 #X obj 12 477 r \$0-limit-mode;
 #X obj 12 652 s \$0-limit-mode-r;
-#X obj 91 182 hsl 64 10 0 100 0 0 \$0-limit-drive-s \$0-limit-drive-r
-drive -2 -8 0 10 -1 -262144 -1 0 1;
-#X obj 16 197 cnv 2 141 1 empty \$0-bar empty 20 12 0 14 -1 -1 0;
 #X obj 12 502 sel 0 1 2, f 15;
 #X msg 12 552 soft;
 #X msg 46 552 hard;
@@ -1028,10 +992,51 @@ drive -2 -8 0 10 -1 -262144 -1 0 1;
 #X obj 499 60 inlet;
 #X obj 547 337 r \$0-state;
 #X obj 547 362 outlet;
-#X obj 316 117 adc~ 1;
-#X obj 383 117 adc~ 2;
+#X obj 5 67 cnv 15 163 178 empty empty empty 20 12 0 14 -33289 -66577
+0;
+#X obj 11 73 cnv 15 151 166 empty empty empty 20 12 0 14 -253816 -66577
+0;
+#X obj 37 89 hradio 10 1 0 4 \$0-shape-s \$0-shape-r triang. 0 -8 0
+10 -253816 -33289 -33289 0;
+#X obj 89 89 hradio 10 1 0 2 \$0-pitch-mode-s \$0-pitch-mode-r detect
+24 4 0 10 -253816 -33289 -33289 0;
+#X obj 19 149 hsl 56 10 1 100 1 0 \$0-sharpness-s \$0-sharpness-r sharpness
+-2 -8 0 10 -33289 -253816 -33289 5500 1;
+#X obj 89 76 cnv 10 10 10 empty empty pitch_mode 0 5 0 10 -253816 -33289
+0;
+#X obj 82 79 cnv 2 2 80 empty \$0-bar empty 20 12 0 14 -33289 -1 0
+;
+#X obj 89 117 nbx 5 15 0 15000 0 0 \$0-pitch-multiply-s \$0-pitch-multiply-r
+multiply 0 -8 0 10 -33289 -253816 -33289 1 256;
+#X obj 148 118 cnv 13 14 15 empty \$0-pitch-label x 0 8 0 10 -253816
+-33289 0;
+#X obj 189 79 r \$0-pitch-update;
+#X obj 92 149 hsl 64 10 0 100 0 0 \$0-phase-s \$0-phase-r phase_shift
+-2 -8 0 10 -33289 -253816 -33289 0 1;
+#X obj 16 164 cnv 2 141 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+0;
+#X obj 19 119 hsl 56 10 0 100 0 0 \$0-mod-s \$0-mod-r modulation -2
+-8 0 10 -33289 -253816 -33289 0 1;
+#X obj 19 221 hsl 56 10 0 100 0 0 \$0-drywet-s \$0-drywet-r drywet
+-2 -8 0 10 -33289 -253816 -33289 5500 1;
+#X obj 187 221 tgl 10 0 \$0-switch-s \$0-switch-r empty 15 4 0 10 -253816
+-33289 -33289 1 1;
+#X obj 100 219 nbx 3 15 -100 100 0 0 \$0-gain-s \$0-gain-r gain 0 -8
+0 10 -33289 -253816 -33289 0 256;
+#X obj 140 224 cnv 13 10 6 empty \$0-text dB 1 2 0 10 -253816 -33289
+0;
+#X obj 16 184 hradio 10 1 0 3 \$0-limit-mode-s \$0-limit-mode-r soft
+34 4 0 10 -253816 -33289 -33289 0;
+#X obj 16 171 cnv 10 10 10 empty empty limit_mode 0 5 0 10 -253816
+-33289 0;
+#X obj 91 184 hsl 64 10 0 100 0 0 \$0-limit-drive-s \$0-limit-drive-r
+drive -2 -8 0 10 -33289 -253816 -33289 0 1;
+#X obj 16 199 cnv 2 141 2 empty \$0-bar empty 20 12 0 14 -33289 -1
+0;
 #X obj 336 381 dac~ 1;
 #X obj 403 381 dac~ 2;
+#X obj 316 117 adc~ 1;
+#X obj 383 117 adc~ 2;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 12 0;
@@ -1048,10 +1053,10 @@ drive -2 -8 0 10 -1 -262144 -1 0 1;
 #X connect 12 0 9 0;
 #X connect 13 0 9 0;
 #X connect 14 0 15 0;
-#X connect 15 0 73 0;
+#X connect 15 0 53 0;
 #X connect 15 1 16 0;
-#X connect 15 2 74 0;
-#X connect 15 3 75 0;
+#X connect 15 2 54 0;
+#X connect 15 3 55 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
@@ -1059,50 +1064,50 @@ drive -2 -8 0 10 -1 -262144 -1 0 1;
 #X connect 21 0 22 0;
 #X connect 22 0 26 1;
 #X connect 22 0 25 1;
-#X connect 23 0 58 0;
-#X connect 24 0 58 1;
-#X connect 25 0 81 0;
-#X connect 26 0 82 0;
+#X connect 23 0 42 0;
+#X connect 24 0 42 1;
+#X connect 25 0 80 0;
+#X connect 26 0 81 0;
 #X connect 28 0 29 0;
 #X connect 29 0 30 1;
 #X connect 29 0 31 1;
-#X connect 30 0 81 0;
-#X connect 31 0 82 0;
-#X connect 40 0 38 0;
-#X connect 46 0 21 0;
-#X connect 47 0 46 0;
-#X connect 47 0 28 0;
-#X connect 49 0 30 0;
-#X connect 50 0 31 0;
-#X connect 53 0 54 0;
-#X connect 54 0 56 0;
-#X connect 55 0 53 0;
-#X connect 56 0 57 0;
-#X connect 57 0 50 1;
-#X connect 57 0 49 1;
-#X connect 58 0 72 0;
-#X connect 58 1 72 2;
-#X connect 61 0 65 0;
-#X connect 62 0 63 0;
-#X connect 63 0 61 0;
-#X connect 64 0 68 0;
-#X connect 68 0 69 0;
-#X connect 68 1 70 0;
-#X connect 68 2 71 0;
-#X connect 69 0 62 0;
-#X connect 70 0 62 0;
-#X connect 71 0 62 0;
-#X connect 72 0 49 0;
-#X connect 72 1 50 0;
-#X connect 73 0 17 0;
-#X connect 74 0 17 0;
-#X connect 75 0 17 0;
-#X connect 76 0 27 0;
-#X connect 77 0 78 0;
-#X connect 79 0 23 0;
-#X connect 79 0 25 0;
-#X connect 79 0 72 1;
-#X connect 80 0 24 0;
-#X connect 80 0 26 0;
-#X connect 80 0 72 3;
-#X coords 0 -1 1 1 153 162 2 10 72;
+#X connect 30 0 80 0;
+#X connect 31 0 81 0;
+#X connect 33 0 21 0;
+#X connect 34 0 33 0;
+#X connect 34 0 28 0;
+#X connect 35 0 30 0;
+#X connect 36 0 31 0;
+#X connect 37 0 38 0;
+#X connect 38 0 40 0;
+#X connect 39 0 37 0;
+#X connect 40 0 41 0;
+#X connect 41 0 36 1;
+#X connect 41 0 35 1;
+#X connect 42 0 52 0;
+#X connect 42 1 52 2;
+#X connect 43 0 47 0;
+#X connect 44 0 45 0;
+#X connect 45 0 43 0;
+#X connect 46 0 48 0;
+#X connect 48 0 49 0;
+#X connect 48 1 50 0;
+#X connect 48 2 51 0;
+#X connect 49 0 44 0;
+#X connect 50 0 44 0;
+#X connect 51 0 44 0;
+#X connect 52 0 35 0;
+#X connect 52 1 36 0;
+#X connect 53 0 17 0;
+#X connect 54 0 17 0;
+#X connect 55 0 17 0;
+#X connect 56 0 27 0;
+#X connect 57 0 58 0;
+#X connect 68 0 66 0;
+#X connect 82 0 23 0;
+#X connect 82 0 25 0;
+#X connect 82 0 52 1;
+#X connect 83 0 24 0;
+#X connect 83 0 26 0;
+#X connect 83 0 52 3;
+#X coords 0 -1 1 1 163 178 2 5 67;
