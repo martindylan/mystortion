@@ -3,7 +3,7 @@ Efecto distorsión basada en AM, desarrollado en [Pure Data](https://github.com/
 Se puede utilizar como plugin VST3 o como abstracción dentro de Pure Data.
 
 ## instalación del plugin
-Descargar de la última [release](https://github.com/martindylan/mystortion/releases) el .zip que corresponda según sistema operativo y arquitectura, y extraer en la carpeta donde pertenezcan los plugins VST3.
+Descargar de la [última release](https://github.com/martindylan/mystortion/releases/latest) el .zip que corresponda según sistema operativo y arquitectura, y extraer en la carpeta donde pertenezcan los plugins VST3.
 
 ## créditos
 - [Pure Data](https://github.com/pure-data/pure-data) por Miller Puckette y muchxs más.
