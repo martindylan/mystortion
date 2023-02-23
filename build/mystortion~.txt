@@ -2,7 +2,7 @@ param -name shape -list triangle/saw/square/noise;
 param -name mod -label % -min 0 -max 100 -nsteps 101;
 param -name sharpness -label % -min 1 -max 100 -nsteps 100;
 param -name pitch mode -list detect/fixed;
-param -name pitch multiply -min 0 -max 15000;
+param -name pitch multiply -min 0.125 -max 15000;
 param -name pitch frequency -label Hz -min 0 -max 15000;
 param -name phase shift -label % -min 0 -max 100 -nsteps 101;
 param -name limit mode -list clip/fold;
