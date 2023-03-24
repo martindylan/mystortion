@@ -1,4 +1,5 @@
 # mystortion~
+![img](https://raw.githubusercontent.com/martindylan/martindylan.github.io/master/static/media/mystortion.f86b96369ef55064438d.png)  
 Efecto distorsión basada en AM, desarrollado en [Pure Data](https://github.com/pure-data/pure-data) + [Camomile](https://github.com/pierreguillot/Camomile).  
 Se puede utilizar como plugin VST3 o como abstracción dentro de Pure Data.
 
